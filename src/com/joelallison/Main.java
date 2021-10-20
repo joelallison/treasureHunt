@@ -19,7 +19,6 @@ public class Main {
 
     static int[] genCoords(int width, int height){
         Random random = new Random();
-
         return new int[] {random.nextInt(width), random.nextInt(height)};
     }
 
@@ -43,7 +42,8 @@ public class Main {
             board[coords[0]][coords[1]] = Integer.toString(random.nextInt(maxCoins)+1);
         }
 
-        System.out.println(" ".repeat(boardWidth / 2) + "--> TREASURE HUNT <--\n");
+        //convoluted way of doing padding d(^-^)
+        System.out.println(new String(new char[(boardWidth/2)-1]).replace("\0", " ") + "--> TREASURE HUNT <--\n");
 
         boolean playing = false;
         //gameloop
